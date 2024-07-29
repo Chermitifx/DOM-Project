@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="BODY"  style="text-align: center; margin-top:50px;" >
+  <!-- Create an HTML file with a <div> element that contains some text. 
+    Write a JavaScript function changeText that changes the text content of the <div> element to "Hello, World!" 
+      when a button is clicked.-->
+  <div id="text"> this is the text  </div>
+  <button onclick="myfunction1()"> change text BTN</button>
+  <div>
+    <button onclick="myfunction2()"> change BG clr </button> 
+  </div>
+  <div id="text2"> this is the second text </div>
+  <button id="btntoggle" > Toggle BTN </button>
+<div>
+    <button id="btnlist" > add item </button>
+    <ul id="mylist">  </ul>
+</div>
+<div>
+  <button id="btnimg" > Change image !</button>
+  <img src="/About.jpeg" id="img" style="width: 500px; height: 250px;"> 
+</div>
+<script>
+    function myfunction1(){
+    var element = document.getElementById("text")
+      element.textContent= "Hello , World!"
+      console.log(" button 1 is clicked")
+    }
+
+    function myfunction2(){
+    var element1 = document.getElementsByClassName("BODY")
+      element1[0].style.backgroundColor = "lightblue";
+      console.log(" button 2 is clicked")
+    }
+
+    let count = 0;
+		let btn = document.getElementById("btntoggle");
+		let disp = document.getElementById("text2");
+		
+		btn.onclick = function () {
+					count++;
+    if( count%2!=0){ disp.innerHTML = " , " }
+    if( count%2==0){ disp.innerHTML = " this is the second text " }
+		}
+
+
+    let count1 = 0;
+		let btn1 = document.getElementById("btnlist");
+		let disp1 = document.getElementById("mylist");
+		
+		btn1.onclick = function () {
+					count1++;
+    var ele5= document.getElementById("mylist")
+    var li=document.createElement('li')
+    li.textContent ="New Item "
+    ele5.appendChild(li) 
+ 
+        }
+
+    let count2 = 0;
+		let btn2 = document.getElementById("btnimg");
+		let disp2 = document.getElementById("img");
+		
+		btn2.onclick = function () {
+					count2++;
+
+    if( count2%2!=0){ disp2.src = "/about2.jpg" }
+    if( count2%2==0){ disp2.src = "/About.jpeg" }
+		}
+
+
+</script>
+
+
+</body>
+</html>
